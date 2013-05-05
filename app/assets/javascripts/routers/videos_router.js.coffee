@@ -33,7 +33,7 @@ class Vine.Routers.Videos extends Backbone.Router
 				success: (collection) ->
 					model = collection.get(id)
 					view = new Vine.Views.Show({ collection: collection, model: model })
-					$('#container').hide().html(view.render().el).fadeIn(2500)
+					$('#container').hide().html(view.render().el).fadeIn(1000)
 					_this.setCollection(collection)
 				error: (model, response) ->
 					console.log(response)
@@ -44,7 +44,7 @@ class Vine.Routers.Videos extends Backbone.Router
 				success: (model) ->
 					collection = _this.getCollection()
 					view = new Vine.Views.Show({ collection: collection, model: model })
-					$('#container').hide().html(view.render().el).fadeIn(200)
+					$('#container').hide().html(view.render().el).fadeIn(100)
 				error: (model, response) ->
 					console.log(response)
 		@setInterval(@getInterval() + 1)
