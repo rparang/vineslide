@@ -1,0 +1,117 @@
+@import 'mixins';
+body, html {
+  height: 100%
+}
+body {
+  background: #000;
+}
+
+#container {
+  @include clearfix();
+  //background: #000;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+#video-bg { 
+  position: absolute; 
+  bottom: 0px; 
+  right: 0px; 
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto; 
+  height: auto; 
+  z-index: 0; 
+  overflow: hidden; 
+}
+
+.bg {
+  @include transition();
+  opacity: 0.8;
+  background: rgba(20, 21, 39, 0.6);
+}
+
+.icon-container {
+  @include clearfix();
+  position: relative;
+  z-index: 1;
+}
+
+.icon-bg {
+  @include clearfix();
+  cursor: pointer;
+  padding: 9px 15px 9px 15px;
+}
+
+.icon-bg-left { @include border-bottom-right-radius(6px) }
+.icon-bg-right { @include border-bottom-left-radius(6px) }
+
+.bg:hover {
+  opacity: 1;
+  .icon {
+    opacity: 1;
+  }
+}
+
+.icon {
+  @include transition();
+  display: block;
+  height: 31px;
+  width: 22px;
+  opacity: 0.8;
+}
+
+.prev {
+  background: url("sprite.png") no-repeat 0 0;
+}
+
+.next {
+  background: url("sprite.png") no-repeat -27px 0;
+}
+
+.meta {
+  position: fixed;
+  width: 100%;
+  min-height: 70px;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.meta-container {
+  @include clearfix;
+  padding: 10px;
+  margin: 0 auto;
+  //width: 500px
+}
+
+.user {
+  //max-width: 230px;
+  img {
+    @include border-radius(4px);
+    width: 50px;
+  }
+  label {
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    width: 200px;
+    margin: 2px 0 0 11px;
+  }
+}
+
+.desc {
+  color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+

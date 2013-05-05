@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  username: MyString
+  vine_id: MyString
+  vine_s3_url: MyString
+  vine_user_image_url: MyString
+
+two:
+  description: MyString
+  username: MyString
+  vine_id: MyString
+  vine_s3_url: MyString
+  vine_user_image_url: MyString

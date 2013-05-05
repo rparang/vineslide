@@ -1,0 +1,4 @@
+<img src="<%= @video.get('vine_user_image_url') %>" />
+
+
+<%= @video.get('description') %>

@@ -1,0 +1,20 @@
+<section class="icon-container">
+	<div class="bg icon-bg icon-bg-left float-left" id="prev"><div class="icon prev"></div></div>
+	<div class="bg icon-bg icon-bg-right float-right" id="next"><div class="icon next"></div></div>
+</section>
+<section class="meta">
+	<div class="bg meta-container">
+		<div class="desc">
+			<%= @video.get('description') %>
+		</div>
+		<div class="user float-left">
+			<img src="<%= @video.get('vine_user_image_url') %>" class="float-left">
+			<label class="float-left"><%= @video.get('username') %></label>
+		</div>
+	</div>
+</section>
+<video id="video-bg" preload="auto" autoplay="autoplay" loop="true">
+  <source src="<%= @video.get('vine_s3_url') %>" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
