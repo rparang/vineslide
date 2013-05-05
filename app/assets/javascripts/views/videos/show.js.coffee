@@ -10,7 +10,7 @@ class Vine.Views.Show extends Backbone.View
   initialize: ->
     #console.log(@model)
     #console.log(this.options.collection)
-    $(document).bind('keypress', this.test);
+    #$(document).bind('keypress', this.test);
 
   render: ->
   	$(@el).html(@template(video: @model))

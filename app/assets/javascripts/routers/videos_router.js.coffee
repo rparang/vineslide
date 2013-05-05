@@ -1,10 +1,18 @@
 class Vine.Routers.Videos extends Backbone.Router
 	routes:
-		'': 'index'
+		'': 'goToShow'
 		'v/:id': 'show'
+		'admin': 'index'
 
 	initialize: ->
 		this.setInterval(0)
+
+	goToShow: ->
+		@collection = new Vine.Collections.Videos()
+		@collection.fetch
+			success: (collection) ->
+				model = collection.at(0)
+				Backbone.history.navigate("v/#{model.get('id')}", true)
 
 	index: -> #DEPRECATE
 		@collection = new Vine.Collections.Videos()

@@ -2,7 +2,7 @@ class VideosController < ApplicationController
 	respond_to :json
 
   def index
-    respond_with Video.limit 10
+    respond_with Video.all
   end
 
   def show
