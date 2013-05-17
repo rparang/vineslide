@@ -9,7 +9,7 @@ def make_videos
 	require 'nokogiri'
 	require 'open-uri'
 
-	array = ["NBA","bay to breakers","funny","yolo"]  #["party", "dance", "yolo", "cats", "NBA", "cinco de mayo", "sexy", "fail", "tyler the creator", "riff raff", "will saso", "funniest"] #%w[hiphop tyler funniest NBA twerk trending] #["tyler the creator", "riff raff", "will saso", "funniest"] #%w[yolo loop NBA vegas sexy fail] #%w[yolo dance music NBA dog cats]
+	array = ["loop","funniest","funny","best"]  #["party", "dance", "yolo", "cats", "NBA", "cinco de mayo", "sexy", "fail", "tyler the creator", "riff raff", "will saso", "funniest"] #%w[hiphop tyler funniest NBA twerk trending] #["tyler the creator", "riff raff", "will saso", "funniest"] #%w[yolo loop NBA vegas sexy fail] #%w[yolo dance music NBA dog cats]
 	array.each do |value|
 		results = Twitter.search("#{value} vine", :result_type => "popular")
 		results.attrs[:statuses].each do |x|
