@@ -19,18 +19,6 @@ body {
   float: right;
 }
 
-#video-bg { 
-  position: absolute; 
-  bottom: 0px; 
-  right: 0px; 
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto; 
-  height: auto; 
-  z-index: 0; 
-  overflow: hidden; 
-}
-
 .bg {
   @include transition();
   opacity: 0.8;
@@ -114,4 +102,31 @@ body {
   font-style: italic;
 }
 
+@media screen and (max-width: 2200px) {
+  #video-bg {
+    position: absolute;
+    min-width: 600px;
+    min-height: 60px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
 
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #video-bg {
+    position: absolute; 
+    bottom: 0px; 
+    right: 0px; 
+    min-width: 100%; 
+    min-height: 100%;
+    margin-right: 0;
+    width: auto; 
+    height: auto; 
+    z-index: 0; 
+    overflow: hidden;
+  }
+}
