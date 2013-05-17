@@ -3,10 +3,7 @@ class Vine.Collections.Videos extends Backbone.Collection
 	model: Vine.Models.Video
 
 	initialize: ->
-		this.on("reset", @initializeElement, this) #Need to wait after fetch has loaded to set
-
-	initializeElement: ->
-		this.setElement(@at(0))
+		#Can't bind on reset event with collection
 
 	getElement: ->
 		return @currentElement
@@ -16,8 +13,13 @@ class Vine.Collections.Videos extends Backbone.Collection
 
 	next: ->
 		@setElement(@at(@indexOf(@getElement()) + 1));
+		console.log(this.indexOf(this.getElement()))
 		this
 
 	prev: ->
 		@setElement(@at(@indexOf(@getElement()) - 1));
+		console.log(this.indexOf(this.getElement()))
 		this
+
+	getIndex: ->
+		return @indexOf(@getElement())

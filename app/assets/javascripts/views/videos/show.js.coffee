@@ -1,5 +1,7 @@
 class Vine.Views.Show extends Backbone.View
 
+  className: 'app'
+
   events:
     'click #next': 'nextVideo'
     'click #prev': 'prevVideo'
@@ -7,13 +9,8 @@ class Vine.Views.Show extends Backbone.View
 
   template: JST['videos/show']
 
-  initialize: ->
-    #console.log(@model)
-    #console.log(this.options.collection)
-    #$(document).bind('keypress', this.test);
-
   render: ->
-  	$(@el).html(@template(video: @model))
+  	$(@el).html(@template({ video: @model, collection: this.options.collection }))
   	this
 
   nextVideo: (e) ->

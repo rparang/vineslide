@@ -8,7 +8,7 @@ class Vine.Routers.Videos extends Backbone.Router
 		this.setInterval(0)
 
 	goToShow: ->
-		@collection = new Vine.Collections.Videos()
+		@collection = new Vine.Collections.Videos() #Need to optimize to call collection once
 		@collection.fetch
 			success: (collection) ->
 				model = collection.at(0)
@@ -17,7 +17,7 @@ class Vine.Routers.Videos extends Backbone.Router
 	index: -> #DEPRECATE
 		@collection = new Vine.Collections.Videos()
 		@collection.fetch
-			reset: true, #use if you want to fire with collection initialize
+			reset: true, #Use if you want to fire with collection initialize
 			success: (collection) ->
 				view = new Vine.Views.VideosIndex(collection: collection)
 				$('#container').html(view.render().el)
@@ -27,24 +27,24 @@ class Vine.Routers.Videos extends Backbone.Router
 	show: (id) ->
 		_this = this #Need to create new instance of 'this'
 		if @getInterval() == 0 #Fetch collection only first time
-			console.log("On initial")
 			@collection = new Vine.Collections.Videos()
 			@collection.fetch
 				success: (collection) ->
 					model = collection.get(id)
+					collection.setElement(collection.at(0)) #Need to set index initially
+					console.log(collection.indexOf(collection.getElement()))
 					view = new Vine.Views.Show({ collection: collection, model: model })
-					$('#container').hide().html(view.render().el).fadeIn(1000)
+					$('#container').hide().html(view.render().el).fadeIn(750)
 					_this.setCollection(collection)
 				error: (model, response) ->
 					console.log(response)
 		else 
-			console.log("After the initial")
 			@model = new Vine.Models.Video(id: id)
 			@model.fetch
 				success: (model) ->
 					collection = _this.getCollection()
 					view = new Vine.Views.Show({ collection: collection, model: model })
-					$('#container').hide().html(view.render().el).fadeIn(100)
+					$('#container').html(view.render().el)
 				error: (model, response) ->
 					console.log(response)
 		@setInterval(@getInterval() + 1)
