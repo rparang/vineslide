@@ -1,2 +1,8 @@
 <h1>Hello from index!</h1>
+
+<form id="new_entry">
+	<input type="text" name="name" id="new_entry_url">
+	<input type="submit" value="Add">
+</form>
+
 <ul id="list"></ul>
