@@ -1,4 +1,4 @@
-<video id="video-bg" preload="auto" xautoplay="autoplay" loop="true">
+<video id="video-bg" preload="auto" autoplay="autoplay" loop="true">
   <source src="<%= @video.get('vine_s3_url') %>" type="video/mp4">
 Your browser does not support the video tag.
 </video>
