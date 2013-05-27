@@ -1,4 +1,3 @@
 <img src="<%= @video.get('vine_user_image_url') %>" />
-
-
-<%= @video.get('description') %>
+<p><%= @video.get('description') %></p>
+<p><%= @video.get('username') %></p>
