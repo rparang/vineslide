@@ -2,16 +2,17 @@
 <html>
 <head>
   <title>Vine</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= csrf_meta_tags %>
-	<meta property="og:site_name" content="Vine Slide"/>
+  <meta property="og:site_name" content="Vine Slide"/>
 	<meta property="og:type" content="video"/>
 	<meta property="og:url" content="<%= request.protocol + request.host_with_port + request.fullpath  %>"/>
 	<meta property="og:title" content="The best Vines on the web"/>
 	<meta property="og:description" content="See a slideshow of the best and funniest Vines"/>
-	<meta property="og:image" content="<%= image_tag('logo-big.png') %>"/>
+	<!--<meta property="og:image" content="<%= image_tag('logo-big.png') %>"/>-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
