@@ -80,7 +80,8 @@ body {
 }
 
 .user {
-  //max-width: 230px;
+  width: 100%;
+  float: left;
   img {
     @include border-radius(4px);
     width: 50px;
@@ -92,6 +93,17 @@ body {
     width: 200px;
     margin: 2px 0 0 11px;
   }
+}
+
+.logo-holder {
+}
+
+.logo {
+  background: url("sprite.png") no-repeat 0 -36px;
+  display: block;
+  height: 45px;
+  width: 151px;
+  opacity: 0.3;
 }
 
 .desc {

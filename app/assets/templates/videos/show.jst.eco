@@ -1,7 +1,8 @@
-<video id="video-bg" preload="auto" autoplay="autoplay" loop="true">
+<video id="video-bg" preload="auto" xautoplay="autoplay" loop="true">
   <source src="<%= @video.get('vine_s3_url') %>" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+
 <section class="icon-container">
 <% if @collection.getIndex() > 0: %>
 	<div class="bg icon-bg icon-bg-left float-left" id="prev"><div class="icon prev"></div></div>
@@ -13,9 +14,10 @@ Your browser does not support the video tag.
 		<div class="desc">
 			<%= @video.get('description') %>
 		</div>
-		<div class="user float-left">
+		<div class="user">
 			<img src="<%= @video.get('vine_user_image_url') %>" class="float-left">
 			<label class="float-left"><%= @video.get('username') %></label>
+			<div class="logo-holder float-right"><div class="logo"></div></div>
 		</div>
 	</div>
 </section>
